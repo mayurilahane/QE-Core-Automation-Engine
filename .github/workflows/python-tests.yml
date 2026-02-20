@@ -31,5 +31,11 @@ jobs:
         # pip install -r requirements.txt
 
     - name: Execute Pytest Suite
-      run: |
-        pytest -v
+      run: pytest --html=report.html # Generates the HTML report
+      
+    - name: Upload Test Report
+      uses: actions/upload-artifact@v4
+      if: always() # This forces the upload even if the tests fail!
+      with:
+        name: pytest-automation-report
+        path: report.html
