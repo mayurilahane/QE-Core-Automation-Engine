@@ -6,6 +6,8 @@ class BasePage:
     def click_element(self, locator):
         self.page.click(locator)
 
-class LoginPage(BasePage):
-    def __init__(self, page):
-        super().__init__(page)
+    def navigate(self, url):
+        self.page.goto(url)
+
+    def enter_text(self, locator, text):
+        self.page.fill(locator, text)

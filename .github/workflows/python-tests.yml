@@ -26,9 +26,8 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest
-        # Uncomment the line below once you have a requirements.txt file
-        # pip install -r requirements.txt
+        pip install -r requirements.txt
+        playwright install
 
     - name: Execute Pytest Suite
       run: pytest --html=report.html # Generates the HTML report
