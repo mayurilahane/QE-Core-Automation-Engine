@@ -6,9 +6,9 @@ class LoginPage(BasePage):
         super().__init__(page)
         # define locators as attribute
         self.url = "https://www.saucedemo.com/"
-        self.username_input = "#user-name"
-        self.password_input = "#password"
-        self.login_button = "#login-button"
+        self.username_input = page.get_by_placeholder("Username")
+        self.password_input = page.get_by_placeholder("Password")
+        self.login_button = page.get_by_role("button", name="Login")
 
     def load(self):
         self.navigate(self.url)
