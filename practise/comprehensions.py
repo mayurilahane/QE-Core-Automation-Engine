@@ -6,9 +6,6 @@ for code in status_codes:
         success_codes.append(code)
 
 
-# Your turn: Try to write the comprehension version of this!
-#success_codes = [code for code in status_codes if code == 200]
-
 # task 2
 ui_prices = ["$10", "$50", "$99"]
 clean_prices = []
